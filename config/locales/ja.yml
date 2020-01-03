@@ -6,6 +6,7 @@ ja:
           attributes:
             base:
               content_attached_files_byte_size_is_too_large: 添付ファイルが%{max_totall_byte_attached_files}Byteを超えています。[%{totall_byte}/%{max_totall_byte_attached_files}]
+              content_attached_files_count_is_over_limit: 添付ファイルが%{max_attached_files_count}を超えています。[%{files_count}/%{max_attached_files_count}]
             title:
               blank: が空です。
               too_long: が%{count}文字を超えています。
