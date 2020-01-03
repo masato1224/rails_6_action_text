@@ -22,6 +22,13 @@ class Post < ApplicationRecord
     end
   end
 
+  # TODO: Postにあるべきメソッドじゃない気がする。
+  # 適切な場所に移す必要がある、一日に一回とかrake tackに書くべきか。
+  def self.delete_unreferenced_blobs
+    referenced_blob_ids = ActiveStorage::Attachment.select(:blob_id)
+    ActiveStorage::Blob.where.not(id: referenced_blob_ids).delete_all
+  end
+
   private
 
   def validate_content_lenght
