@@ -49,7 +49,7 @@ class Post < ApplicationRecord
   end
 
   def validate_content_attached_files_count
-    return if attached_files.length <= MAX_ATTACHED_FILES_COUNT
+    return if attached_files.count <= MAX_ATTACHED_FILES_COUNT
 
     errors.add(
       :base,
